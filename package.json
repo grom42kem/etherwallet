@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/grom42kem/etherwallet#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
     "mongoose": "^5.10.14",
     "node-telegram-bot-api": "^0.50.0",
     "nodemon": "^2.0.6",
