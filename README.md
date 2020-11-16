@@ -1,3 +1,4 @@
 # etherwallet
 
-(TelegramBot)[https://t.me/ethereum_wallet_bot]
+[TelegramBot](https://t.me/ethereum_wallet_bot)
+
