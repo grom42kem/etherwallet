@@ -1,0 +1,32 @@
+{
+  "name": "etherwallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grom42kem/etherwallet.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "Wallet",
+    "wallet.",
+    "ethereum",
+    "web3"
+  ],
+  "author": "grom42kem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grom42kem/etherwallet/issues"
+  },
+  "homepage": "https://github.com/grom42kem/etherwallet#readme",
+  "dependencies": {
+    "mongoose": "^5.10.14",
+    "node-telegram-bot-api": "^0.50.0",
+    "nodemon": "^2.0.6",
+    "web3": "^1.3.0"
+  }
+}
