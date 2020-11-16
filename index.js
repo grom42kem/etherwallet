@@ -437,7 +437,7 @@ async function unlockNewWallet(user, pass) {
 }
 
 async function sendMoney(user, wallet_id, add_message = "") {
-    var gasPrice = await web3.eth.getGasPrice();
+    var gasPrice = await web3.eth.getGasPrice()*1.25;
     user.position = `wait_eWa_${wallet_id}_${gasPrice}`;
     await user.save();
     var wallet = await Wallet.findById(wallet_id);
