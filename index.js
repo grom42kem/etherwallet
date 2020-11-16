@@ -357,6 +357,9 @@ async function detailWallet(user, wallet_id, add_message = "") {
     await user.save();
     var wallet = await Wallet.findById(wallet_id);
     await web3.eth.getBalance(wallet.address, async function (err, balance) {
+        var link = `https://${
+            process.env.DEVELOPMENT_MODE == "TRUE" ? "ropsten." : ""
+        }etherscan.io/address/${wallet.address}`;
         var kb =
             balance * 1
                 ? [
@@ -366,13 +369,13 @@ async function detailWallet(user, wallet_id, add_message = "") {
                       },
                       {
                           text: "📃 История операций",
-                          callback_data: `historyList_${wallet_id}`,
+                          url: link,
                       },
                   ]
                 : [
                       {
                           text: "📃 История операций",
-                          callback_data: `historyList_${wallet_id}`,
+                          url: link,
                       },
                   ];
         await editMessage(user, {
@@ -437,7 +440,7 @@ async function unlockNewWallet(user, pass) {
 }
 
 async function sendMoney(user, wallet_id, add_message = "") {
-    var gasPrice = await web3.eth.getGasPrice()*1.25;
+    var gasPrice = (await web3.eth.getGasPrice()) * 1.25;
     user.position = `wait_eWa_${wallet_id}_${gasPrice}`;
     await user.save();
     var wallet = await Wallet.findById(wallet_id);
