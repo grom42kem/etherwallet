@@ -30,7 +30,6 @@ const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {
 
 const User = require("./models/User");
 const Wallet = require("./models/Wallet");
-const { balance } = require("z:/ethwalletbot/language");
 
 async function checkUser(msg) {
     var thisuser = await User.find({
